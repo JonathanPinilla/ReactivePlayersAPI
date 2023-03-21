@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -26,7 +27,7 @@ public class Player {
     private Double health = 30.0;
     private Double mana = 10.0;
     private Double Speed = 5.0;
-    private List<Armor> armors;
+    private List<Armor> armors = new ArrayList<>();
 
     private void updateArmor(Armor armor) {
         if (this.armors.stream().noneMatch(armor1 -> armor1.getArmorType() == armor.getArmorType())) {

@@ -10,12 +10,12 @@ import reactor.core.publisher.Mono;
 import java.util.function.Function;
 
 @Service
-public class GetStudentByIdUseCase implements Function<String, Mono<PlayerDTO>> {
+public class GetPlayerByIdUseCase implements Function<String, Mono<PlayerDTO>> {
 
     private final PlayerRepository playerRepository;
     private final ModelMapper modelMapper;
 
-    public GetStudentByIdUseCase(PlayerRepository playerRepository, ModelMapper modelMapper) {
+    public GetPlayerByIdUseCase(PlayerRepository playerRepository, ModelMapper modelMapper) {
         this.playerRepository = playerRepository;
         this.modelMapper = modelMapper;
     }

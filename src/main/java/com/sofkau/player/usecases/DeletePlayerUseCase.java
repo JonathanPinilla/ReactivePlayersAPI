@@ -7,11 +7,11 @@ import reactor.core.publisher.Mono;
 import java.util.function.Function;
 
 @Service
-public class DeleteStudentUseCase implements Function<String, Mono<Void>> {
+public class DeletePlayerUseCase implements Function<String, Mono<Void>> {
 
     private final PlayerRepository playerRepository;
 
-    public DeleteStudentUseCase(PlayerRepository playerRepository) {
+    public DeletePlayerUseCase(PlayerRepository playerRepository) {
         this.playerRepository = playerRepository;
     }
 

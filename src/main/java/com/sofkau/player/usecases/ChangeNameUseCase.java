@@ -4,10 +4,12 @@ import com.sofkau.player.domain.collection.Player;
 import com.sofkau.player.domain.dto.PlayerDTO;
 import com.sofkau.player.repository.PlayerRepository;
 import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
 import java.util.function.BiFunction;
 
+@Service
 public class ChangeNameUseCase implements BiFunction<String, String, Mono<PlayerDTO>> {
 
     private final PlayerRepository playerRepository;

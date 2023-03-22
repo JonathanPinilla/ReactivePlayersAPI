@@ -29,6 +29,7 @@ public class Player {
     private Double Speed = 5.0;
     private List<Armor> armors = new ArrayList<>();
 
+
     private void updateArmor(Armor armor) {
         if (this.armors.stream().noneMatch(armor1 -> armor1.getArmorType() == armor.getArmorType())) {
             this.armors.add(armor);

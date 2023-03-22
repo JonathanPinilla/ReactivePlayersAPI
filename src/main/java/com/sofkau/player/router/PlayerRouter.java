@@ -53,7 +53,7 @@ public class PlayerRouter {
         return route(PUT("/api/player/{id}").and(accept(MediaType.APPLICATION_JSON)),
                 request -> request.bodyToMono(PlayerDTO.class)
                         .flatMap(playerDTO -> changeNameUseCase.apply(request.pathVariable("id"), playerDTO.getName())
-                                .flatMap(result -> ServerResponse.status(201)
+                                .flatMap(result -> ServerResponse.ok()
                                         .contentType(MediaType.APPLICATION_JSON)
                                         .bodyValue(result))
                         )

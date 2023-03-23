@@ -17,5 +17,6 @@ public class Armor {
     private Double health;
     private Double mana;
     private Double speed;
+    private Boolean isEquipped;
 
 }

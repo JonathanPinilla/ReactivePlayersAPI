@@ -30,7 +30,7 @@ public class Player {
     private List<Armor> armors = new ArrayList<>();
 
 
-    private void updateArmor(Armor armor) {
+    public void updateArmor(Armor armor) {
         if (this.armors.stream().noneMatch(armor1 -> armor1.getArmorType() == armor.getArmorType())) {
             this.armors.add(armor);
             this.armor += armor.getArmor();
@@ -43,7 +43,7 @@ public class Player {
         }
     }
 
-    private void removeArmor(Armor armor) {
+    public void removeArmor(Armor armor) {
         if (this.armors.stream().anyMatch(armor1 ->
                 armor1.getArmorType() == armor.getArmorType() &&
                         armor1.getId().equals(armor.getId())
@@ -59,7 +59,7 @@ public class Player {
         }
     }
 
-    private void levelUp() {
+    public void levelUp() {
         if (this.level == 10) {
             throw new IllegalArgumentException("You have reached the maximum level");
         }

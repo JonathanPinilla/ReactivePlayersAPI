@@ -45,7 +45,7 @@ public class PlayerRouter {
                                         .contentType(MediaType.APPLICATION_JSON)
                                         .bodyValue(result))
                         )
-                        .onErrorResume(error -> ServerResponse.badRequest().build()));
+                        .onErrorResume(throwable -> ServerResponse.status(HttpStatus.NOT_ACCEPTABLE).bodyValue(throwable.getMessage())));
     }
 
     @Bean

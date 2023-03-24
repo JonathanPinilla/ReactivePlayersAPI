@@ -1,6 +1,8 @@
 package com.sofkau.player.domain.collection;
 
 import com.sofkau.player.domain.external.Armor;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,7 +21,13 @@ public class Player {
 
     @Id
     private String id = UUID.randomUUID().toString().substring(0, 10);
+
+    @NotNull(message = "The name is required")
+    @NotBlank(message = "The name should not be empty")
     private String name;
+
+    @NotNull(message = "The raze is required")
+    @NotBlank(message = "The raze should not be empty")
     private String raze;
     private Integer level = 1;
     private Double armor = 0.0;

@@ -29,7 +29,8 @@ public class ChangeNameUseCase implements BiFunction<String, String, Mono<Player
                     return player;
                 })
                 .flatMap(playerRepository::save)
-                .map(this::toDto);
+                .map(this::toDto)
+                .onErrorResume(Mono::error);
     }
 
     private PlayerDTO toDto(Player player) {

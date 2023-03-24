@@ -23,7 +23,8 @@ public class SavePlayerUseCase implements Function<PlayerDTO, Mono<PlayerDTO>> {
     @Override
     public Mono<PlayerDTO> apply(PlayerDTO playerDTO) {
         return playerRepository.save(toEntity(playerDTO))
-                .map(this::toDto);
+                .map(this::toDto)
+                .onErrorResume(Mono::error);
     }
 
     private Player toEntity(PlayerDTO playerDTO) {

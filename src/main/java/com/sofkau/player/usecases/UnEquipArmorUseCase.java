@@ -28,7 +28,8 @@ public class UnEquipArmorUseCase implements BiFunction<Armor, String, Mono<Playe
                     return player;
                 })
                 .flatMap(playerRepository::save)
-                .map(player -> modelMapper.map(player, PlayerDTO.class));
+                .map(player -> modelMapper.map(player, PlayerDTO.class))
+                .onErrorResume(Mono::error);
     }
 }
 
